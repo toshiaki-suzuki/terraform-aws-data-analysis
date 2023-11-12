@@ -56,3 +56,9 @@ resource "aws_iam_role_policy" "redshift_s3_access_policy" {
     ],
   })
 }
+
+module "script-bucket" {
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.15.1"
+  bucket  = "script-bucket-for-terraform-data-analysis"
+}
